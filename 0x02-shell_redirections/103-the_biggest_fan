@@ -1,0 +1,2 @@
+#!/bin/bash
+cut -f2 < log_file.tsv | sort | uniq -c | sort -rn | head -n 11
