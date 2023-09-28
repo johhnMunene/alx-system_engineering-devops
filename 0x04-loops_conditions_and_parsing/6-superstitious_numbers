@@ -27,4 +27,3 @@ do
     esac
     ((counter++))
 done
-
