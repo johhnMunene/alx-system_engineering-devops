@@ -5,25 +5,27 @@
 # - Displays "bad luck from Italy" for the 17th loop iteration
 # - Displays "Best School" for all other iterations
 
-counter=0
+counter=1
 while [ $counter -le 20 ]; 
 do
     case $counter in
         4)
-	     
+	    echo "$counter" 
             echo "bad luck from China"
   
             ;;
         9)
+	    echo "$counter"
             echo "bad luck from Japan"
             
             ;;
         17)
+	    echo "$counter"
             echo "bad luck from Italy"
             
             ;;
         *)
-            
+            echo "$counter"
             ;;
     esac
     ((counter++))
