@@ -3,4 +3,4 @@
 # shellcheck disable=SC2009
 
 
-ps aux | grep '[b]ash'
+ps aux | grep 'bash'
