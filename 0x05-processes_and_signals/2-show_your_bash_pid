@@ -1,6 +1,6 @@
 #!/bin/bash
+## Use 'ps' to list processes and filter for lines containing 'bash'
 # shellcheck disable=SC2009
 
-# Use 'ps' to list processes and filter for lines containing 'bash'
 
 ps aux | grep '[b]ash'
