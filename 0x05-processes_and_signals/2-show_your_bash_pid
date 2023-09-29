@@ -1,6 +1,6 @@
-#!/bin/bash
-## Use 'ps' to list processes and filter for lines containing 'bash'
+#!/usr/bin/env bash
+# display lines containing the bash word
 # shellcheck disable=SC2009
 
-
-ps aux | grep 'bash'
+#It lists all the processes that are running on the system and are owned by the current user.
+ps -aux | grep bash
