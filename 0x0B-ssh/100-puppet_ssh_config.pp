@@ -5,6 +5,6 @@ file { '/etc/ssh/ssh_config':
   content =>"Host 246582-web-01/n/
              HostName 54.237.68.41/n/
 	     identityFile ~/.ssh/school/n/
-             passwordAuthetication No"
+             PasswordAuthentication No"
 	     
 }
