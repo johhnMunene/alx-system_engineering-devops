@@ -1,0 +1,2 @@
+# SSH Config File
+ssh -v ubuntu@54.237.68.41
