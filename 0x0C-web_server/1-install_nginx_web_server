@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # Update package index
 sudo apt-get update -y
 
@@ -11,14 +12,12 @@ sudo sh -c "echo 'server {
         listen [::]:80 default_server;
 
         root /var/www/html;
-	index index.html index.htm index.nginx-debian.html;
+        index index.html;
 
         server_name _;
 
         location / {
-                return 200 \"Hello World!\n\";
+                return 200 \"Hello World!\\n\";
         }
 }' > /etc/nginx/sites-available/default"
 
-# Restart nginx
-sudo service nginx restart
