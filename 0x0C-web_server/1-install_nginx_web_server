@@ -23,3 +23,8 @@ sudo sh -c 'echo "server {
 
 sudo service nginx restart
 
+if sudo service nginx status | grep -q "active (running)"; then
+    echo "Nginx is running."
+else
+    echo "Error: Nginx is not running."
+fi
