@@ -3,7 +3,7 @@
 # Update package index
 sudo apt-get update -y
 
-# Install nginx
+# Install nginx full
 sudo apt-get install nginx -y
 sudo service nginx start
 # Configure nginx
