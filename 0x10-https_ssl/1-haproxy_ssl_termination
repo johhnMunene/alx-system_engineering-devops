@@ -36,5 +36,5 @@ listen http-in
         bind :80
         bind :443 ssl crt  /etc/letsencrypt/live/www.jomunene.tech/fullchain.pem
         balance roundrobin
-        server 342961-web-01 100.26.168.106:80 check
-        server 342961-web-02 54.236.16.171:80 check
+        server 246582-web-01 54.237.68.41:80 check
+        server 246582-web-02 18.234.80.75:80 check
