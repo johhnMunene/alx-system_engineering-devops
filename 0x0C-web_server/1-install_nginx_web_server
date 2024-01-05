@@ -1,27 +1,28 @@
 #!/usr/bin/env bash
 #update/installation
 
-sudo apt-get -y update;
-sudo apt-get -y install nginx;
-sudo system start nginx;
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo service nginx start
 
 #configure
 
-sudo ssh -c 'echo "server{
+sudo sh -c 'echo "server{
 	listen 80;
-	listen [::]:80
-	root/www/html;
-	index index.html index.htm index.nginx-debian.html
+	listen [::]:80;
+	root/var/www/html;
+	index index.html index.htm index.nginx-debian.html;
 	
 	sever_name_;
 	
 	location /{
-		return 200 /"hello world!"/n/;
-} >" etc/nginx/sites-available'
+		return 200 "hello world!//n";
+	}
+} >" etc/nginx/sites-available/default'
 	
-	sudo system nginx restart;
+	sudo service nginx restart
 
-	if sudo system nginx status |grep -q "active (running)";then
+	if sudo service nginx status |grep -q "active (running)";then
 		echo "Nginx is running"
 	else
 		echo "Error:Nginx is not running"
