@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Nginx configuration script to listen on port 80
 # Remove the default Nginx site configuration
 rm /etc/nginx/sites-enabled/default
