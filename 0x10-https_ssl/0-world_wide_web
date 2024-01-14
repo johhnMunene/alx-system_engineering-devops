@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # Function to retrieve domain information
 domain_information() {
     line=$(dig "$2.$1" | grep -A 'ANSWER SECTION:' | tr '\t' '\n' | tail -2 | tr '\n' '')
