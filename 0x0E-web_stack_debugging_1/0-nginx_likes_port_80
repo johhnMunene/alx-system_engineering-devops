@@ -1,29 +1,19 @@
-#!/usr/bin/env bash
-# Nginx configuration script to listen on port 80
-# Remove the default Nginx site configuration
-rm /etc/nginx/sites-enabled/default
+#!/bin/bash
+# Install Nginx if not already present
+if ! which nginx &> /dev/null; then
+  sudo apt update
+  sudo apt install nginx -y
+fi
 
-# Create a new Nginx site configuration with a simple server block listening on port 80
-echo "server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
+# Add the custom header to the default Nginx configuration
+sudo sed -i '/server_name _;/a\
+add_header X-Served-By $hostname;' /etc/nginx/sites-available/default
 
-    server_name _;
-
-    root /var/www/html;
-    index index.html index.htm;
-
-    location / {
-        try_files \$uri \$uri/ =404;
-    }
-}" > /etc/nginx/sites-available/default
-
-# Create a symbolic link to enable the new configuration
-ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-
-# Restart Nginx to apply changes
-service nginx restart
-
-# Output a message indicating the completion of the configuration
-echo "Nginx configured to listen on port 80"
+# Test the configuration and reload Nginx
+sudo nginx -t
+if [ $? -eq 0 ]; then
+  sudo service nginx reload
+else
+  echo "Error in Nginx configuration. Please check the syntax and try again."
+fi
 

@@ -27,4 +27,3 @@ sudo systemctl restart haproxy
 sudo systemctl enable haproxy
 
 echo "HAProxy has been installed and configured successfully."
-
