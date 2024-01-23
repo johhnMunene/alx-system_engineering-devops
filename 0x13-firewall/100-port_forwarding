@@ -1,6 +1,4 @@
 #SSH into web-01
-ssh ubuntu@54.165.55.51
-
 #Open the UFW configuration file for editing
 sudo vi /etc/ufw/before.rules
 
