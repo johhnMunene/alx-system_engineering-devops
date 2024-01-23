@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#Bash script that accepts one argument
+
+if [# -ne 1];then
+ echo "usage"$0"<username>"
+ exit 1
+
+username=$1
+
+su -c "whoami"$username
